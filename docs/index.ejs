@@ -1,0 +1,57 @@
+<% var data = jsonData %><!DOCTYPE html>
+<html lang="ja">
+<head>
+    <% var title = "Akira HIRATA" %>
+    <% include _head %>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <!-- header-->
+        <header>
+            <h1><a href="./">Akira HIRATA</a></h1>
+            <nav><ul>
+                    <li><a class="current" href="./">WORKS</a></li>
+                    <li><a href="./about.html">ABOUT</a></li>
+                    <li><a href="./contact.html">CONTACT</a></li>
+            </ul></nav>
+        </header>
+
+        <!-- Switcher-->
+        <ul class="switch">
+            <li class="selected" id="all">ALL</li>
+            <li id="web">web</li>
+            <li id="image">image</li>
+            <li id="other">other</li>
+        </ul>
+
+        <!-- Works-->
+        <ul class="works">
+
+            <% data.forEach(function(val,key){ %>
+            <li class="<%= data[key].category %>"><a href="./works_<%= data[key].id %>.html">
+                <img src="./images/works/<%= data[key].id %>_0.jpg" alt="<%= data[key].title %>">
+                <div>
+                    <h3><%= data[key].title %></h3>
+                    <p><%= data[key].abst %></p>
+                </div>
+            </a></li>
+            <% }); %>
+
+        </ul>
+
+        <!-- Footer-->
+        <footer><a id="gotop" href="#top" title="上へスクロール">▲</a>
+            <p><small>© Akira HIRATA 2015 - 2017</small></p>
+        </footer>
+
+    </div><!-- /wrap -->
+
+    <!-- SCRIPTS-->
+    <script src="scripts/main.min.js"></script>
+    <script src="https://use.typekit.net/hrs2dxq.js"></script>
+    <script>try{Typekit.load({async:true});}catch(e){}</script>
+
+</body>
+</html>

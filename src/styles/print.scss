@@ -1,0 +1,402 @@
+@charset "UTF-8";
+$base: #f39800;
+$line: #334;
+body{
+    font: 12pt/1.7 "heisei-maru-gothic-std",Arial,"小塚ゴシック Pro","小塚ゴシック Pr6N","ヒラギノ角ゴ Pro","Hiragino Kaku Gothic Pro","メイリオ",Helvetica,Sans-Serif;
+    counter-reset: sheet; /* page count */
+    color: $line;
+}
+
+
+////////////////////////////////////////////////////////////////
+// プリント用の設定
+////////////////////////////////////////////////////////////////
+section.sheet{
+    width: 210mm; height: 297mm;
+    page-break-after: always;
+}
+@page {
+    size: A4;
+    margin: 0
+}
+@media print {
+  body {
+    width: 210mm; /* needed for Chrome */
+    .preview{ display: none; }
+  }
+}
+
+////////////////////////////////////////////////////////////////
+// Webプレビュー用のスタイル
+////////////////////////////////////////////////////////////////
+@media screen {
+  html { margin: 0;padding: 0; }
+  body{background-color: #eee; margin: 0;padding: 0; overflow:auto}
+  .preview>p, .preview>h1{
+    font-size: 16px;
+    margin: 5mm 5mm 0;
+    color: #999;
+    width: 210mm;
+    a{text-decoration: underline;}
+  }
+  .sheet {
+    background-color: $base;
+    box-shadow: 0 .5mm 2mm rgba(0,0,0,.3);
+    margin: 5mm;
+  }
+}
+
+////////////////////////////////////////////////////////////////
+// シート共通のスタイル
+////////////////////////////////////////////////////////////////
+section.sheet{
+    background-color: $base;
+    padding: 3mm;
+    position: relative;
+    // ノンブル
+    &::after {
+        position: absolute;
+        bottom: 0; right: 0;
+        counter-increment: sheet;
+        content: counter(sheet);
+        background-color: rgba($line,.5);
+        color: $base;
+        width: 9mm;
+        padding: 1mm 0;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 2mm 0 0 0;
+    }
+    &:nth-child(odd)::after{ left: 0; border-radius: 0 2mm 0 0; }
+}
+
+//サイドヘッダー
+section header{
+    width: 8%; height: 100%;
+    opacity: .6;
+    float: left;
+    border-color: $line;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    ul{ list-style:none; }
+    li{
+        margin-top: 3mm;
+        color: $base;
+        background-color: $line;
+        box-sizing: content-box;
+        border: 1mm solid $line;
+        width: 100%; height: 60mm;
+    }
+    h2{
+        writing-mode: vertical-rl;
+        font-size: 22pt;
+        color: #fff;
+        letter-spacing: 4pt;
+        margin: 6mm 0;
+        line-height: 16mm;
+    }
+    p{
+        writing-mode: vertical-rl;
+        margin: 8mm 0;
+        font-size: 18pt;
+        line-height: 16mm;
+    }
+}
+section:nth-child(even) header{
+    float: right;
+    border-width: 0 0 0 1mm;
+    li{
+        float: right;
+        // border-radius: 0 5mm 5mm 0;
+        border-left: none;
+    }
+    h2,p{ float: right; }
+}
+section:nth-child(odd) header{
+    float: left;
+    border-width: 0 1mm 0 0;
+    li{
+        float: left;
+        // border-radius: 2mm 0 0 2mm;
+        border-right: none;
+    }
+    h2,p{float: left; transform: rotate(180deg);}
+}
+section:nth-of-type(3) header li:nth-of-type(1),
+section:nth-of-type(4) header li:nth-of-type(1),
+section:nth-of-type(5) header li:nth-of-type(2),
+section:nth-of-type(6) header li:nth-of-type(2),
+section:nth-of-type(7) header li:nth-of-type(2),
+section:nth-of-type(8) header li:nth-of-type(3),
+section:nth-of-type(9) header li:nth-of-type(3){
+    color: $line;
+    background-color: $base;
+}
+
+section .wrap{
+    width: 92%; height: 100%;
+    float: left;
+}
+
+//line
+section .wrap .line{
+    height: .5%;
+    background-color: rgba(#fff,.1);
+    border-radius: 1mm;
+}
+//divide
+section .wrap .div3{ height: 33%; }
+section .wrap .div2{ height: 49.75%; }
+section:nth-child(even) .wrap .line{ margin-right: 6mm; }
+section:nth-child(odd) .wrap .line{ margin-left: 6mm; }
+section:nth-child(even) .wrap .div3,
+section:nth-child(even) .wrap .div2
+{ padding: 2mm 6mm 2mm 0; }
+section:nth-child(odd) .wrap .div3,
+section:nth-child(odd) .wrap .div2
+{ padding: 2mm 0 2mm 6mm; }
+
+
+////////////////////////////////////////////////////////////////
+// 表紙
+////////////////////////////////////////////////////////////////
+section:nth-of-type(1) header{ display: none; }
+section:nth-of-type(1) .wrap{ width: 100%; }
+section .wrap .cover{
+    padding: 15mm 17mm;
+    overflow: auto;
+    h2{
+        font-size: 20pt;
+        letter-spacing: 1pt;
+        p{ font-size:15pt; opacity:.7; }
+    }
+    img{ margin: 5mm 0 8mm; }
+    table.contact{
+        float:right;
+        opacity:.7;
+        tr td:nth-child(1){ font-weight: bold; }
+    }
+    table.index{
+        width: 100%;
+        color: rgba(#fff,.7);
+        border-collapse: separate;
+        border-spacing: 3mm;
+        text-align: left;
+        font-size: 15pt;
+        tr td:nth-child(1){
+            background-color: rgba(#fff,.7);
+            width: 2mm;
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////
+// 自己紹介ページ
+////////////////////////////////////////////////////////////////
+section .wrap .prof{
+    font-size: 15pt;
+    h3{
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 2pt;
+        font-weight: 700;
+    }
+    p{
+        font-size: 15pt;
+        padding: 9mm 10mm;
+        text-align: justify;
+        text-indent: 1em;
+        color: rgba($line,.8);
+        a{ text-decoration: underline; }
+    }
+    strong{ color:rgba(#fff,.7); }
+    .skill{
+        p{
+            padding: 6mm 8mm;
+            font-size: 14pt;
+            float: left;
+            width: 48%;
+        }
+        img{ padding: 1mm 6mm 0 0;width: 52%; float: right;}
+    }
+
+}
+
+////////////////////////////////////////////////////////////////
+// 作品紹介ページ
+////////////////////////////////////////////////////////////////
+.work{
+    h3{
+        color: #fff;
+        font-size: 24pt;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+    }
+    p{
+        font-size: 10.5pt;
+        text-align: justify;
+        text-indent: 1em;
+        color: rgba($line,.8);
+        strong{ color: $line; }
+    }
+    img.photo{
+        border: 2mm solid #fff;
+        box-shadow: .3mm .3mm 1mm rgba(#000,.3);
+    }
+}
+
+// 3, 5, 6
+section .wrap .div2{
+    overflow: auto;
+    img{
+        display: block;
+        margin: 7mm auto;
+        height: 56%;
+    }
+    h3{
+        margin-bottom: 2mm;
+        padding-bottom: 1mm;
+        border-bottom: .7mm #fff solid;
+        line-height: 1;
+        position: relative;
+    }
+    h3 span{
+        font-size: 12pt;
+        position: absolute;
+        right: 0;
+        bottom: 1mm
+    }
+    .sub{
+        line-height: 1;
+    }
+    .sub ul{
+        list-style: none;
+        display: inline;
+        font-size: 11pt;
+    }
+    .sub li{
+        color: #fff;
+        margin-left: 4.3mm;
+        margin-right: 4mm;
+        display: inline;
+        position: relative;
+    }
+    .sub li::after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: .85mm;
+        left: -4.3mm;
+        width: 2.4mm;
+        height: 2.4mm;
+        border-right: 1mm solid rgba(#fff,.5);
+        border-bottom: 1mm solid rgba(#fff,.5);
+        transform: rotate(-45deg);
+    }
+    .sub a{
+        float: right;
+        text-decoration: underline;
+    }
+    p{
+        margin-top: 4.5mm;
+        padding: 0 1mm;
+    }
+}
+
+// 4, 7
+section .wrap .div3.work{
+    overflow: auto;
+    img{
+        display: block;
+        padding: 4mm;
+        width: 47%;
+        float: left;
+    }
+    .rightBox{
+        width: 53%;
+        float: right;
+        padding:0 3mm 0 5mm;
+    }
+    h3{
+        margin-bottom: 2mm;
+        padding-bottom: 1mm;
+        border-bottom: .7mm #fff solid;
+        line-height: 1;
+        position: relative;
+    }
+    h3 span{
+        font-size: 12pt;
+        position: absolute;
+        right: 0;
+        bottom: 1mm
+    }
+    .sub{
+        line-height: 1;
+        position: relative;
+    }
+    .sub ul{
+        list-style: none;
+        font-size: 11pt;
+    }
+    .sub li{
+        color: #fff;
+        margin-left: 4mm;
+        margin-bottom: 1.5mm;
+        position: relative;
+    }
+    .sub li::after {
+        display: block;
+        content: '';
+        position: absolute;
+        top: .85mm;
+        left: -4.3mm;
+        width: 2.4mm;
+        height: 2.4mm;
+        border-right: 1mm solid rgba(#fff,.5);
+        border-bottom: 1mm solid rgba(#fff,.5);
+        transform: rotate(-45deg);
+    }
+    .sub a{
+        text-decoration: underline;
+        position: absolute;
+        top: 0; right: 0;
+    }
+    p{
+        font-size: 12pt;
+        margin-top: 4.5mm;
+        padding: 0 1mm;
+    }
+}
+
+
+
+////////////////////////////////////////////////////////////////
+// 裏表紙
+////////////////////////////////////////////////////////////////
+section:nth-of-type(10) header{ display: none; }
+section:nth-of-type(10) .wrap{ width: 100%; }
+section .wrap .bcover{
+    padding-top: 60mm;
+    height: 100%;
+    position: relative;
+    h3{
+        text-align: center;
+        font-size: 40pt;
+        letter-spacing: 5pt;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 800;
+    }
+    table{
+        font-size: 14pt;
+        position: absolute;
+        bottom: 6mm; right: 8mm;
+        opacity:.8;
+        tr td:nth-child(1){ font-weight: bold; }
+        tr:last-child{
+            color: rgba(#fff,.8);
+            line-height: 2.5;
+            vertical-align: bottom;
+        }
+    }
+}

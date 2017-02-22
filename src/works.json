@@ -1,0 +1,227 @@
+{
+    "pages": [
+        {
+            "id": "illustka",
+            "title": "いらすとか",
+            "category": "all web",
+            "link": "http://xn--n8jo5b6c1i.tech/",
+            "date": "2017/2",
+            "numImg": 2,
+            "tech": ["Web Design","HTML/CSS","Responsive","Planning"],
+            "abst": "入力した文章をいらすとにするサービス。HackDay優秀賞受賞。",
+            "desc": "入力された文章をフリー画像サイト「<a href=\"http://www.irasutoya.com/\" target=\"blank_\">いらすとや</a>」のイラストを使って、いらすとで表現してくれるサービス。Yahoo!開催の日本最大規模のハッカソン：<a href=\"http://hackday.jp/\" target='blank'>HackDay</a>参加作品。5人チームで参加し、優秀賞を受賞しました。<a href=\"http://gigazine.net/news/20170206-irasutoya-irasutoka/\" target=\"brank_\">GAGAZIN</a>、<a href=\"http://news.livedoor.com/article/detail/12638328/\" target=\"brank_\">livedoorNEWS</a>、<a href=\"http://www.appbank.net/2017/02/06/iphone-news/1308841.php\" target=\"brank_\">APP BANK</a>、<a href=\"https://www.buzzfeed.com/akikochino/irasutoka?utm_term=.qsVLx58j8#.hqond64G4\" target=\"brank_\">BuzzFeeD</a>など、多くのメディアに掲載していただきました。とにかく「楽しい」サービスであることを目指し、アクセス後すぐ利用できる迷わない構成でデザインしました。"
+        },
+        {
+            "id": "selp",
+            "title": "SEl-P",
+            "category": "all web",
+            "link": "",
+            "tube": "https://www.youtube.com/embed/uisASoDBFqg",
+            "date": "2016/9",
+            "numImg": 2,
+            "tech": ["App Design","UI/UX","Illustrator","Planning"],
+            "abst": "自撮り投稿のインプレッションに応じてポイントが貯まるサービス・アプリケーション。",
+            "desc": "自撮り投稿のインプレッションに応じてポイントが貯まるサービス・アプリ。自撮りに顔が写っているか、ポイントが貯まる商品が写っているかを自動識別。知人の自撮りという高い広告効果に対して広告費を支払うことができる。アプリデザインの経験は少ないですが、モックからフローまで丁寧に作成をしました。"
+        },
+        {
+            "id": "teamup",
+            "title": "teamup",
+            "category": "all web",
+            "link": "https://teamup-jp.com/lp",
+            "date": "2016/3 ~",
+            "numImg": 3,
+            "tech": ["Web Design","HTML/CSS","jQuery"],
+            "abst": "新規B向けWebサービスの起ち上げにデザイナーとして参加しました。",
+            "desc": "<a href=\"https://teamup-jp.com/corporate\" target=\"brank_\">teamup株式会社</a>による、ビジネス向けWebサービス。5人前後のチームで開発を行いました。リードデザイナーとして、ローンチの際の全体やロゴのデザイン、コーディング、フロントのインタラクションを担当しました。人事の人の求める<strong>一覧性、視認性を重視</strong>したデザインです。"
+        },
+        {
+            "id": "cook",
+            "title": "料理",
+            "category": "all image other",
+            "link": "https://www.facebook.com/psephopaiktes/media_set?set=a.178807358911388.36361.100003463758940&type=3",
+            "date": "2011~",
+            "numImg": 5,
+            "tech": ["Photo","Photoshop","cooking"],
+            "abst": "制作した料理の写真。250枚以上をFBに投稿。アパート情報サイトつくいえに掲載。",
+            "desc": "趣味で作成している料理と、その撮影。Facebookに250枚以上の写真を投稿。誰かにたべてもらったり、いっしょに作ったり、人と繋がれる素敵なコンテンツ制作です。つくばのアパート情報サイト<a href=\"http://tsukuba-daigaku.com/?m=201308&paged=19\" target=\"brank\">つくいえ</a>に、僕の料理写真を掲載して頂きました。"
+        },
+        {
+            "id": "inolab",
+            "title": "インタラクションラボWebページ",
+            "category": "all web",
+            "link": "http://inolab.slis.tsukuba.ac.jp/",
+            "date": "2016/1",
+            "numImg": 2,
+            "tech": ["HTML/CSS","Javascript","PHP","Responsive"],
+            "abst": "筑波大学井上研究室のWebページをPHPで作成",
+            "desc": "筑波大学井上研究室(インタラクションラボ)の公式HPのリニューアル作成。Responsive対応、英語・日本語切り替え機能などを実装。<strong>コンテンツ量が莫大なため、メニューや導線をわかりやすく改善しました。</strong>"
+        },
+        {
+            "id": "cpicker",
+            "title": "CommonPicker",
+            "category": "all web",
+            "link": "",
+            "date": "2015/11",
+            "numImg": 4,
+            "tech": ["Web Design","HTML/CSS","Responsive","Planning"],
+            "abst": "会話を提供するWebサービス。ハッカソン優勝作品。",
+            "desc": "東京で開催されたハッカソン：<a href=\"http://hackerwars.goodfind.jp/\" target='blank'>Hackerwars</a>参加作品。簡単に共通の話題を見つけられる素敵なサービスです。3人チームで参加し、平田は企画やフロントエンド開発を担当。楽しそうで、誰でも簡単な操作で使えるデザインを目指しました。最優秀賞、じげん企業賞を受賞。<!-- <a href=\"http://commonpicker.com/\" target='brank_'>2016/1/28にサービスを公開しました！</a> -->"
+        },
+        {
+            "id": "pov",
+            "title": "Dancing POV",
+            "category": "all other",
+            "link": "",
+            "date": "2015/11",
+            "numImg": 5,
+            "tech": ["Processing","Arduino"],
+            "abst": "振るだけでライトアートが描けるデバイス。ArduinoとProcessingにより開発。",
+            "desc": "スローシャッター撮影を用いて光の軌跡を撮影するライトアートを、誰でも振るだけで描けるデバイス。<strong>人間の力をデジタルに使わせてアートする</strong>というコンセプト。ArduinoやIR LED、一眼レフ、PC、IRフィルターなどで構成され、Processingにより開発。落合陽一先生の授業にて友人と企画・作成し、平田はProcessing部分を主に担当。"
+        },
+        {
+            "id": "ms",
+            "title": "MS開発者支援キャラ",
+            "category": "all image",
+            "link": "https://twitter.com/claudia_azure/status/667022885781794816",
+            "date": "2015/10",
+            "numImg": 2,
+            "tech": ["VectorDrawing","Illustrator","Inkscape"],
+            "abst": "マイクロソフトが開催するマスコットキャラクターコンテスト優秀賞作品",
+            "desc": "マイクロソフトが開催した<a href=\"https://msdn.microsoft.com/ja-jp/mt603996\" target=\"brank_\">開発者支援 マスコット キャラクター コンテンスト</a>に応募した作品です。スマートな印象をあたえるためにキリンをモチーフに、ロゴを使ってデザインしました。優秀賞を受賞しました。"
+        },
+        {
+            "id": "dzfes",
+            "title": "デザインフェスタ出展",
+            "category": "all web other",
+            "link": "http://weba.jp/orca15/",
+            "date": "2015/10",
+            "numImg": 5,
+            "tech": ["Design","Craft","HTML/CSS","Web Design","Responsive"],
+            "abst": "エッチング、ポストカードなど、オリジナル作品をデザインフェスタに出展。HPも作成。",
+            "desc": "デザインフェスタvol42でのオリジナル作品の出展。エッチングによるデザインガラス製品、ランプシェード、オリジナルポストカードの作成・販売。また、広報用にHPも作成。企画、広報、店のデザインなど自分たちで全て行いました。"
+        },
+        {
+            "id": "tmc",
+            "title": "筑波マジシャンズクラブHP",
+            "category": "all web",
+            "link": "http://www.stb.tsukuba.ac.jp/~magic/",
+            "date": "2014/10",
+            "numImg": 2,
+            "tech": ["HTML/CSS","Web Design","Javascript","Responsive"],
+            "abst": "筑波大学マジシャンズクラブのWebページを作成",
+            "desc": "TMC（筑波大学マジシャンズクラブ）の公式HPの作成。興味を持ってくれた人が簡単にコンタクトできる導線を意識しました。さらにサークルのHPであるため、更新しやすく改変もしやすい、引き継ぎの簡単なファイル構成、マークアップを意識して作成しました。"
+        },
+        {
+            "id": "sp",
+            "title": "UIカスタマイズ",
+            "category": "all other",
+            "link": "http://weba.jp/2014/06/23/%E5%A4%96%E3%82%82%E4%B8%AD%E3%82%82%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6%E3%81%AAiphone%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F/#more-204",
+            "date": "2014/6",
+            "numImg": 4,
+            "tech": ["Illustrator","Drawing","UI Design"],
+            "abst": "ポケモンデザインのスマートフォンUIを作成しました。",
+            "desc": "ピカチュウデザインのiPhone5や、ロケット団デザインのNexus7などをカスタマイズしました。UIや背景を作成したり、ウィジェットなどの作成、背景のシールなどを作ってます。"
+        },
+        {
+            "id": "weba",
+            "title": "weba",
+            "category": "all web",
+            "link": "http://weba.jp",
+            "date": "2014/4",
+            "numImg": 2,
+            "tech": ["HTML/CSS","Web Design","WordPress","Logo"],
+            "abst": "平田のブログサイト\"WEBA\"です。Wordpressのオリジナルテーマ。",
+            "desc": "僕の最初の個人ブログです。初めてちゃんと作ったWebサイトであり、企画からデザイン、マークアップまでフルスクラッチで作成しました。自己表現の場であり、自分の好きなよう<strong>オリジナリティのあふれるデザイン</strong>をコンセプトに、いろいろと勉強しながら完成させました。"
+        },
+        {
+            "id": "no4",
+            "title": "アートブック「第四種特殊生物報告書」",
+            "category": "all image",
+            "link": "",
+            "date": "2013/11",
+            "numImg": 4,
+            "tech": ["Maya Modeling","Illustrator","Printing"],
+            "abst": "３DCGを用いて作成した、日常に潜む空想生物たちのアート図鑑。",
+            "desc": "架空の生物を図鑑形式で紹介したエンターテイメント性溢れるアートブック。友人5人と協力し、3DCGを用いて作成。新しい技術を覚えることと、読んで楽しいと思える本をつくることを目的に作成しました。"
+        },
+        {
+            "id": "magic",
+            "title": "パフォーマンス",
+            "category": "all other",
+            "link": "",
+            "tube": "https://www.youtube.com/embed/4gcKmwG8ZSI",
+            "date": "2013/11",
+            "numImg": 1,
+            "tech": ["MAGIC","Performance"],
+            "abst": "ステージで行ったマジック。動画あり。",
+            "desc": "ステージマジックショーで行ったパフォーマンス。動画はシンブルという演目です。演目の構成や、衣装、相手から見える自分を意識することなど、非常に高度の表現力が必要となります。"
+        },
+        {
+            "id": "meishi",
+            "title": "名刺デザイン",
+            "category": "all image",
+            "link": "",
+            "date": "2013~",
+            "numImg": 4,
+            "tech": ["Graphic Design","Illustrator","Printing"],
+            "abst": "オリジナルグラフィックと特殊印刷の名刺デザイン",
+            "desc": "自分と知人の名刺を作成。<strong>個人の特徴や趣味をひと目であらわした</strong>オリジナルのデザインで作成し、特殊印刷を用いて高級感を演出。"
+        },
+        {
+            "id": "logo",
+            "title": "ロゴデザイン",
+            "category": "all ",
+            "link": "https://www.drwallet.jp/",
+            "date": "2013~",
+            "numImg": 3,
+            "tech": ["Illustrator","Logo"],
+            "abst": "家計簿アプリDr.Walletなどのロゴ、アイコンデザイン。",
+            "desc": "<a href=\"https://www.drwallet.jp/\" target=\"blank\">家計簿アプリDr.Wallet</a>のアイコン、<a href=\"https://www.drwallet.jp/navi/\" target=\"blank\">節約ZINE(現：Dr.Walletナビ)</a>のピクトグラムとロゴなどを作成。<strong>アプリのコンセプトを端的に表しつつ</strong>、フラットデザインとマテリアルデザインで作成しています。"
+        },
+        {
+            "id": "photo",
+            "title": "写真",
+            "category": "all image",
+            "flag": "off",
+            "link": "",
+            "date": "2013~",
+            "numImg": 5,
+            "tech": ["Photo","Photoshop"],
+            "abst": "撮影した写真作品。Photoshopにより加工",
+            "desc": "仕事や趣味で撮影した写真です。Photoshopにより加工しています。"
+        },
+        {
+            "id": "illust",
+            "title": "イラストレーション",
+            "category": "all image",
+            "link": "http://pixiv.me/psephopaiktes",
+            "date": "2012~",
+            "numImg": 5,
+            "tech": ["VectorDrawing","Illustrator","Inkscape"],
+            "abst": "Illustratorによるベクターイラストレーション。ファンアート多め。",
+            "desc": "IllustratorやInkscapeといったベクターソフトによるイラストレーション。ゲームのファンアートが多めです。絵を描くことは専門ではありませんが、大好きです。デザイン制作物の表現の幅を増やせます。"
+        },
+        {
+            "id": "banner",
+            "title": "Webバナー制作",
+            "category": "all web",
+            "link": "",
+            "date": "2012 ~",
+            "numImg": 3,
+            "tech": ["Photoshop","Illustrator","Printing"],
+            "abst": "Webバナーのデザインと作成。",
+            "desc": "広報用Webバナーのデザイン。<a href=\"http://beartail.jp/\" target=\"blank_\">株式会社BearTail</a>でバイトデザイナーとして頂いているお仕事です。これまでに数十作を作成し、かなり画像ソフトの練習になっています。広告の<strong>伝えたい情報</strong>を目立たせることを意識しています。"
+        },
+        {
+            "id": "bira",
+            "title": "リーフレット",
+            "category": "all image",
+            "link": "",
+            "date": "2012 ~",
+            "numImg": 4,
+            "tech": ["Photoshop","Illustrator","Printing"],
+            "abst": "広報用のリーフレット（ビラ）のデザイン。",
+            "desc": "広報用のリーフレット(ビラ)のデザイン。サークルや<a href=\"http://beartail.jp/\" target=\"blank_\">BearTail</a>にて依頼されて作成。広告の<strong>伝えたい情報</strong>を目立たせることを意識しています。"
+        }
+    ]
+}
