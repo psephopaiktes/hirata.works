@@ -23,15 +23,14 @@ $( function(){
     //for Fade
     $(window).on('load',function(){
         $('#fade').fadeTo(300, 1);
-        // $('.works').fadeTo(300, 1);
     });
 
     // for Fade Wroks
-    $(window).on('load',function(){
-        $('.works li').each(function(i){
-            $(this).delay(50*i).animate({opacity:1}, 500);
-        });
-    });
+    // $(window).on('load',function(){
+    //     $('.works li').each(function(i){
+    //         $(this).delay(50*i).animate({opacity:1}, 500);
+    //     });
+    // });
 
 
 
