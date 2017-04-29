@@ -20,10 +20,12 @@ $( function(){
         $('#loader').delay(200).fadeOut(300);
     });
 
+    // GitHubPagesのレスポンスが悪いため、アニメーションをOFF
+
     //for Fade
-    $(window).on('load',function(){
-        $('#fade').fadeTo(300, 1);
-    });
+    // $(window).on('load',function(){
+    //     $('#fade').fadeTo(300, 1);
+    // });
 
     // for Fade Wroks
     // $(window).on('load',function(){
