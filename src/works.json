@@ -1,6 +1,17 @@
 {
     "pages": [
         {
+            "id": "peta2stack",
+            "title": "ペタペタスタック",
+            "category": "all web",
+            "link": "https://peta2stack.com/",
+            "date": "2017/5",
+            "numImg": 5,
+            "tech": ["Web Design","HTML/CSS","ERB","Responsive"],
+            "abst": "研究者やエンジニアのための、データセット共有プラットフォーム",
+            "desc": "データセットを検索・共有し、ユーザー同士で交流もできるWebサイト。全体的に統一感のあるデザインを行い、ユーザがストレスなく利用できるサイト構成を目指しました。友人と3人で作成しました。 "
+        },
+        {
             "id": "illustka",
             "title": "いらすとか",
             "category": "all web",
