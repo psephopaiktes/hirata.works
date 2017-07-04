@@ -10,6 +10,10 @@ $( function(){
     });
 
     //Go top
+    $(window).scroll( function() {
+        if ($(this).scrollTop() > 100) $('#gotop').css('opacity','1');
+        else $('#gotop').css('opacity','0');
+    });
     $('#gotop').on('click', function() {
         $('body,html').animate({scrollTop:0}, 'swing');
     });
@@ -37,9 +41,6 @@ $( function(){
 
 
     //for Slide show
-    // Copyright (c) 2013-2015 Adrien Delessert
-    //Released under the MIT license
-    //http://opensource.org/licenses/mit-license.php
     $('.my-flipster').flipster({
         style: 'flat',
         spacing: -0.8,
@@ -47,5 +48,11 @@ $( function(){
         start: 'center',
         nav: 'after'
     });
+    // change aspect
+    if( $('.flipster__container').height() > $('.left-box img').width() )
+        $('.left-box img,.left-box video').css({
+            height: '60rem',
+            width: 'auto'
+        });
 
 });
