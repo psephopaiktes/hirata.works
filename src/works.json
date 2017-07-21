@@ -48,12 +48,12 @@
             "id": "teamup",
             "title": "teamup",
             "category": "all web",
-            "link": "https://teamup-jp.com/lp",
+            "link": "https://teamup.jp",
             "date": "2016/3 ~",
             "numImg": 3,
             "tech": ["Web Design","HTML/CSS","jQuery"],
             "abst": "新規B向けWebサービスの起ち上げにデザイナーとして参加しました。",
-            "desc": "<a href=\"https://teamup-jp.com/corporate\" target=\"brank_\">teamup株式会社</a>による、ビジネス向けWebサービス。5人前後のチームで開発を行いました。リードデザイナーとして、ローンチの際の全体やロゴのデザイン、コーディング、フロントのインタラクションを担当しました。人事の人の求める<strong>一覧性、視認性を重視</strong>したデザインです。"
+            "desc": "<a href=\"https://teamup.jp/corporate\" target=\"brank_\">teamup株式会社</a>による、ビジネス向けWebサービス。企画段階から関わり、初期メンバーとして5人前後のチームに参加していました。リードデザイナーとして、ローンチの際の全体やロゴのデザイン、コーディング、フロントのインタラクションを担当しました。人事担当者の求める<strong>一覧性、視認性を重視</strong>したデザインです。"
         },
         {
             "id": "cook",
