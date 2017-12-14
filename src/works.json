@@ -1,6 +1,17 @@
 {
     "pages": [
         {
+            "id": "osyaberiya",
+            "title": "おしゃべりや",
+            "category": "all web",
+            "link": "http://osyaberiya.com/",
+            "date": "2017/12",
+            "numImg": 2,
+            "tech": ["Web Design","HTML/CSS","javascript","Responsive","Planning"],
+            "abst": "入力した文章内容から感情を推定してキャラクターのおしゃべり動画を生成するサービス。HackDay TECH賞受賞。",
+            "desc": "入力された文章からフリー画像サイト「<a href=\"http://www.irasutoya.com/\" target=\"blank_\">いらすとや</a>」のキャラクターがおしゃべりする動画を生成するサービス。Yahoo!開催の日本最大規模のハッカソン：<a href=\"http://hackday.jp/\" target='blank'>HackDay</a>参加作品。5人チームで参加し、TECH賞を受賞しました。入力された内容から感情を推定し、キャラクターの表情が変化します。ユーザが迷わずに楽しめる遷移設計とインタラクションを実装しました。"
+        },
+        {
             "id": "kotsukuri",
             "title": "コツクリ",
             "category": "all web",
