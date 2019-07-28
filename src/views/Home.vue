@@ -1,17 +1,20 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
-</template>
+<template><div>
+
+  <!-- <ModalView id="aa" /> -->
+  <img alt="Vue logo" src="@/assets/logo.png">
+
+  <p>aaaaa</p>
+  <p>aaaaa</p>
+
+</div></template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import ModalView from '@/components/ModalView.vue'; // @ is an alias to /src
 
 @Component({
   components: {
-    HelloWorld,
+    ModalView,
   },
 })
 export default class Home extends Vue {}

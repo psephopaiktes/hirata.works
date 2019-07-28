@@ -1,10 +1,17 @@
 {
   "name": "hirata.works",
   "version": "0.1.0",
+  "author": "Akira HIRATA",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psephopaiktes/hirata.works"
+  },
   "scripts": {
+    "serve": "vue-cli-service serve",
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "deploy": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -15,7 +22,14 @@
     "vuex": "^3.0.1"
   },
   "vue": {
-    "outputDir": "docs"
+    "outputDir": "docs",
+    "css": {
+      "loaderOptions": {
+        "sass": {
+          "data": "@import '@/common.scss';"
+        }
+      }
+    }
   },
   "devDependencies": {
     "@vue/cli-plugin-typescript": "^3.9.0",
