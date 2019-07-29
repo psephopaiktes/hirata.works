@@ -17,6 +17,7 @@
         <li><a href="https://note.mu/psephopaiktes" target="brank_">N</a></li>
         <li><a href="https://www.instagram.com/psephopaiktes/" target="brank_">I</a></li>
       </ul>
+      <p><small>© Akira HIRATA 2019</small></p>
     </footer>
   </main>
 
@@ -32,7 +33,7 @@ html {
   color: $COLOR_MAIN;
 }
 body {
-  overscroll-behavior: smooth; //TODO
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   font-size: 14px;
@@ -41,7 +42,7 @@ body {
   font-weight: 400;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ";
   font-feature-settings : "pkna";
-  @media ( max-width: $WIDTH_TABLET ){ }
+  @media ( max-width: $WIDTH_TAB ){ }
 }
 *,
 *::before,
@@ -82,5 +83,15 @@ button{
   background: none;
   border: none;
   outline: none;
+}
+
+//
+main>div{
+  min-height: 100vh;
+}
+footer{
+  width: 100%;
+  background: rgba($COLOR_MAIN, .2)
+
 }
 </style>
