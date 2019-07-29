@@ -18,6 +18,8 @@ npm runn Build
 <!-- TODO -->
 
 # TODO
+- URL実装 /work/aaa  でどこでもタイトルモーダルを出せる、直接アクセスしたらWork上に出す。
+-COntactModalどうする?
 - WORKS
   - 押したIDに応じてURLアップデート
   - グリッドのソート機能、Next,Prevボタン

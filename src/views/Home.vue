@@ -7,15 +7,3 @@
   <p>aaaaa</p>
 
 </div></template>
-
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import ModalView from '@/components/ModalView.vue'; // @ is an alias to /src
-
-@Component({
-  components: {
-    ModalView,
-  },
-})
-export default class Home extends Vue {}
-</script>

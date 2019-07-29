@@ -1,5 +1,7 @@
 <template><div id="app">
 
+  <ModalView />
+
   <nav><ul>
     <h1><router-link to="/">Akira HIRATA</router-link></h1>
     <li><router-link to="/">Home</router-link></li>
@@ -20,7 +22,6 @@
       <p><small>© Akira HIRATA 2019</small></p>
     </footer>
   </main>
-
 
 </div></template>
 
@@ -95,3 +96,16 @@ footer{
 
 }
 </style>
+
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import ModalView from '@/components/ModalView.vue';
+
+@Component({
+  components: {
+    ModalView,
+  },
+})
+export default class App extends Vue {}
+</script>

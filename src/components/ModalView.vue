@@ -1,36 +1,40 @@
 <template>
 
-  <div v-if="id" id="container">
+    <div v-if="mid" id="container">
 
-    <div id="overlay" @click="$emit('hideModal')"></div>
+      <div id="overlay" @click="$store.commit('hideModal')"></div>
 
-    <section id="modal">
-      <button @click="$emit('hideModal')">X</button><br>
-      <button @click="$emit('nextModal')">Next</button><br>
-      <button @click="$emit('prevModal')">Prev</button>
-      <h2>{{ works[id].title }}</h2>
-      <p>{{ works[id].date }}</p>
-      <a :href=works[id].link target="brank_">LINK</a>
-      <p>{{ works[id].description }}</p>
-    </section>
+      <section id="modal">
+        <button @click="$store.commit('hideModal')">X</button><br>
+        <button @click="">Next</button><br>
+        <button @click="">Prev</button>
+        <h2>{{ works[mid].title }}</h2>
+        <p>{{ works[mid].date }}</p>
+        <a :href=works[mid].link target="brank_">LINK</a>
+        <p>{{ works[mid].description }}</p>
+      </section>
 
-  </div>
+    </div>
 
-  <div v-else></div>
+    <div v-else></div>
 
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class ModalView extends Vue {
-  @Prop() private id!: string;
-
   // data
   private works: any[] = this.$store.state.works;
+
+  // computed
+  public get mid(): string {
+    return this.$store.state.modal;
+  }
 }
 </script>
+
 
 <style scoped lang="scss">
 #container{
