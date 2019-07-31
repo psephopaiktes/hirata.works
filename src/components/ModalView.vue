@@ -49,7 +49,7 @@ export default class ModalView extends Vue {}
   width: 100%;
   height: 100%;
   background: rgba($COLOR_MAIN, .1);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(6px);
 }
 #modal{
   position: relative;
@@ -57,7 +57,9 @@ export default class ModalView extends Vue {}
   max-width: 800px;
   margin: 80px auto;
   padding: 48px;
-  background: $COLOR_BASE;
-  box-shadow: 0 16px 32px rgba($COLOR_MAIN, .3);
+  background: rgba($COLOR_BASE,.8);
+  backdrop-filter: blur(24px);
+  border-radius: 8px;
+  box-shadow: 0 16px 32px rgba($COLOR_MAIN, .2);
 }
 </style>

@@ -3,7 +3,7 @@
 
     <ModalView />
 
-    <nav>
+    <nav class="en">
       <h1><router-link to="/">Akira HIRATA</router-link></h1>
       <ul>
         <li><router-link to="/">
@@ -23,27 +23,15 @@
 
     <main>
       <router-view />
-      <footer>
+      <footer class="en">
         <ul>
-          <li>
-            <a href="https://twitter.com/psephopaiktes" target="brank_">T</a>
-          </li>
-          <li>
-            <a href="https://hirata.blog/" target="brank_">B</a>
-          </li>
-          <li>
-            <a href="https://note.mu/psephopaiktes" target="brank_">N</a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/psephopaiktes/" target="brank_">I</a>
-          </li>
-          <li>
-            <a href="https://github.com/psephopaiktes/" target="brank_">G</a>
-          </li>
+          <li><a href="https://twitter.com/psephopaiktes" target="brank_">T</a></li>
+          <li><a href="https://hirata.blog/" target="brank_">B</a></li>
+          <li><a href="https://note.mu/psephopaiktes" target="brank_">N</a></li>
+          <li><a href="https://www.instagram.com/psephopaiktes/" target="brank_">I</a></li>
+          <li><a href="https://github.com/psephopaiktes/" target="brank_">G</a></li>
         </ul>
-        <p>
-          <small>© Akira HIRATA 2019</small>
-        </p>
+        <p><small>© Akira HIRATA 2019</small></p>
       </footer>
     </main>
   </div>
@@ -68,8 +56,6 @@ nav {
   align-items: center;
   flex-direction: column;
   background: $COLOR_THEME;
-  font-family: "Avenir Next", "Avenir Neue", "Avenir", Futura, "Century Gothic",
-    "Helvetica Neue", Helvetica, Roboto, Arial, Sans-serif;
   a{
     text-decoration: none;
     color: darken($COLOR_THEME, 40%);
@@ -90,10 +76,14 @@ nav {
     a{
       color: $COLOR_BASE;
       opacity: .6;
-    }
-    a.router-link-exact-active{
-      font-weight: 600;
-      opacity: 1;
+      font-weight: 300;
+      &:hover{
+        opacity: 1;
+      }
+      &.router-link-exact-active{
+        font-weight: 600;
+        opacity: 1;
+      }
     }
     i{
       vertical-align: text-top;
@@ -103,7 +93,7 @@ nav {
       width: 160px;
       height: 48px;
       line-height: 48px;
-      border-radius: 24px;
+      border-radius: 8px;
       margin-top: 24px;
       background: $COLOR_BASE;
       color: darken($COLOR_THEME, 15%);
@@ -124,13 +114,33 @@ main{
   position: relative;
   background: $COLOR_BASE;
   $footer_height: 240px;
-  padding-bottom: $footer_height;
+  padding-bottom: $footer_height+80px;
   footer {
+    height: $footer_height;
     width: 100%;
-    height: calc($footer_height + 200px);
     position: absolute;
     bottom: 0;
-    background: rgba(#fff,.4);
+    background: darken($COLOR_BASE, 4%);
+    text-align: center;
+    ul{
+      display: flex;
+      justify-content: center;
+      margin: 80px auto 0;
+      a{
+        background: #000;
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin: 0 8px;
+        opacity: .5;
+        &:hover{
+          opacity: .8;
+        }
+      }
+    }
+    p{
+      margin: 24px 0 0;
+    }
   }
 }
 </style>
