@@ -1,99 +1,137 @@
-<template><div id="app">
+<template>
+  <div id="app">
 
-  <ModalView />
+    <ModalView />
 
-  <nav><ul>
-    <h1><router-link to="/">Akira HIRATA</router-link></h1>
-    <li><router-link to="/">Home</router-link></li>
-    <li><router-link to="/about">About</router-link></li>
-    <li><router-link to="/works">Works</router-link></li>
-    <li><router-link to="/contact">Contact</router-link></li>
-  </ul></nav>
-
-  <main>
-    <router-view/>
-    <footer>
+    <nav>
+      <h1><router-link to="/">Akira HIRATA</router-link></h1>
       <ul>
-        <li><a href="https://twitter.com/psephopaiktes" target="brank_">T</a></li>
-        <li><a href="https://hirata.blog/" target="brank_">B</a></li>
-        <li><a href="https://note.mu/psephopaiktes" target="brank_">N</a></li>
-        <li><a href="https://www.instagram.com/psephopaiktes/" target="brank_">I</a></li>
+        <li><router-link to="/">
+          <i class="material-icons-outlined">home</i>Home
+        </router-link></li>
+        <li><router-link to="/about">
+          <i class="material-icons-outlined">person</i>About
+        </router-link></li>
+        <li><router-link to="/works">
+          <i class="material-icons-outlined">widgets</i>Works
+        </router-link></li>
+        <li><button @click="$store.commit('showContactModal')">
+            <i class="material-icons-outlined">send</i>Contact
+        </button></li>
       </ul>
-      <p><small>© Akira HIRATA 2019</small></p>
-    </footer>
-  </main>
+    </nav>
 
-</div></template>
+    <main>
+      <router-view />
+      <footer>
+        <ul>
+          <li>
+            <a href="https://twitter.com/psephopaiktes" target="brank_">T</a>
+          </li>
+          <li>
+            <a href="https://hirata.blog/" target="brank_">B</a>
+          </li>
+          <li>
+            <a href="https://note.mu/psephopaiktes" target="brank_">N</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/psephopaiktes/" target="brank_">I</a>
+          </li>
+          <li>
+            <a href="https://github.com/psephopaiktes/" target="brank_">G</a>
+          </li>
+        </ul>
+        <p>
+          <small>© Akira HIRATA 2019</small>
+        </p>
+      </footer>
+    </main>
+  </div>
+</template>
 
 
 <style lang="scss">
-html {
-  background-color: rgba($COLOR_BASE,.6);
-  background-image: url(/img/paper.png);
-  background-blend-mode: multiply;
-  color: $COLOR_MAIN;
-}
-body {
-  scroll-behavior: smooth;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  color: rgba($COLOR_MAIN,.8);
-  line-height: 1.7;
-  font-weight: 400;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ";
-  font-feature-settings : "pkna";
-  @media ( max-width: $WIDTH_TAB ){ }
-}
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-ul {
-  list-style-type: none;
-}
-img {
-  border: none;
-  vertical-align: top;
-  max-width: 100%;
-}
-b{
-  font-weight: 700;
+@import "@/scss/common.scss";
+@import "@/scss/foundation.scss";
+@import "@/scss/utility.scss";
+@import "@/scss/layout.scss";
 
+nav {
+  width: 320px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: $COLOR_THEME;
+  font-family: "Avenir Next", "Avenir Neue", "Avenir", Futura, "Century Gothic",
+    "Helvetica Neue", Helvetica, Roboto, Arial, Sans-serif;
+  a{
+    text-decoration: none;
+    color: darken($COLOR_THEME, 40%);
+  }
+  h1{
+    width: 180px;
+    text-align: right;
+    font-size: 24px;
+  }
+  ul{
+    width: 180px;
+    font-size: 20px;
+    margin-top: 16px;
+    li{
+      text-align: right;
+      margin-top: 16px;
+    }
+    a{
+      color: $COLOR_BASE;
+      opacity: .6;
+    }
+    a.router-link-exact-active{
+      font-weight: 600;
+      opacity: 1;
+    }
+    i{
+      vertical-align: text-top;
+      margin-right: 8px;
+    }
+    button{
+      width: 160px;
+      height: 48px;
+      line-height: 48px;
+      border-radius: 24px;
+      margin-top: 24px;
+      background: $COLOR_BASE;
+      color: darken($COLOR_THEME, 15%);
+      opacity: .9;
+      box-shadow: 0 16px 32px rgba(darken($COLOR_THEME, 30%),.5);
+      font-size: 20px;
+      &:hover{
+        opacity: 1;
+        transform: scale(1.04);
+      }
+    }
+  }
 }
-a{ color: $COLOR_THEME }
-a:visited{ color: darken($COLOR_THEME, 8%) }
-a:hover{ color: lighten($COLOR_THEME, 4%) }
-a:active{ color: darken($COLOR_THEME, 8%) }
-a,
-area,
-button,
-[role="button"],
-input:not([type="range"]),
-label,
-select,
-summary,
-textarea {
-  touch-action: manipulation;
-}
-button{
-  cursor: pointer;
-  background: none;
-  border: none;
-  outline: none;
-}
-
-//
-main>div{
+main{
+  width: calc(100vw - 320px);
   min-height: 100vh;
-}
-footer{
-  width: 100%;
-  background: rgba($COLOR_MAIN, .2)
-
+  float: right;
+  position: relative;
+  background: $COLOR_BASE;
+  $footer_height: 240px;
+  padding-bottom: $footer_height;
+  footer {
+    width: 100%;
+    height: calc($footer_height + 200px);
+    position: absolute;
+    bottom: 0;
+    background: rgba(#fff,.4);
+  }
 }
 </style>
 
@@ -107,5 +145,14 @@ import ModalView from '@/components/ModalView.vue';
     ModalView,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  // lifecycle hook
+  private mounted() {
+    if (this.$route.query.wid) {
+      this.$store.commit('showWorkModal', this.$route.query.wid);
+    } else if (this.$route.query.contact) {
+      this.$store.commit('showContactModal');
+    }
+  }
+}
 </script>

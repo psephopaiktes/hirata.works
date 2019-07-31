@@ -1,0 +1,101 @@
+// TODO 不要なウェイト消す
+@font-face {
+  font-family:'WebFont'; font-weight: 100;
+  src: local('Tazugane Gothic StdN'), url('/font/UltLt.woff2') format('woff2');
+  font-display: fallback;
+}
+@font-face {
+  font-family:'WebFont'; font-weight: 200;
+  src: local('Tazugane Gothic StdN'), url('/font/Thin.woff2') format('woff2');
+  font-display: fallback;
+}
+@font-face {
+  font-family:'WebFont'; font-weight: 300;
+  src: local('Tazugane Gothic StdN'), url('/font/Light.woff2') format('woff2');
+  font-display: fallback;
+}
+@font-face {
+  font-family:'WebFont'; font-weight: 400;
+  src: local('Tazugane Gothic StdN'), url('/font/Book.woff2') format('woff2');
+  font-display: fallback;
+}
+@font-face {
+  font-family:'WebFont'; font-weight: 500;
+  src: local('Tazugane Gothic StdN'), url('/font/Regular.woff2') format('woff2');
+  font-display: fallback;
+}
+@font-face {
+  font-family:'WebFont'; font-weight: 600;
+  src: local('Tazugane Gothic StdN'), url('/font/Medium.woff2') format('woff2');
+  font-display: fallback;
+}
+@font-face {
+  font-family:'WebFont'; font-weight: 700;
+  src: local('Tazugane Gothic StdN'), url('/font/Bold.woff2') format('woff2');
+  font-display: fallback;
+}
+@font-face {
+  font-family:'WebFont'; font-weight: 800;
+  src: local('Tazugane Gothic StdN'), url('/font/Heavy.woff2') format('woff2');
+  font-display: fallback;
+}
+@font-face {
+  font-family:'WebFont'; font-weight: 900;
+  src: local('Tazugane Gothic StdN'), url('/font/Black.woff2') format('woff2');
+  font-display: fallback;
+}
+
+html {
+  background-color: $COLOR_THEME;
+}
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: rgba($COLOR_MAIN,.8);
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: WebFont, 'Tazugane Gothic StdN', -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Noto Sans CJK JP", "ヒラギノ角ゴ Pro W3", "游ゴシック", "Yu Gothic", YuGothic, Meiryo, "メイリオ", "Segoe UI", Roboto, "Helvetica Neue", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Arial, sans-serif;
+  font-smoothing: antialiased;
+  font-feature-settings : "palt";
+  @media ( max-width: $WIDTH_TAB ){ }
+}
+
+*{
+  transition: .2s ease-out;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+img {
+  border: none;
+  vertical-align: top;
+  max-width: 100%;
+}
+b{
+  font-weight: 700;
+}
+// a{ color: $COLOR_THEME }
+// a:visited{ color: darken($COLOR_THEME, 8%) }
+// a:hover{ color: lighten($COLOR_THEME, 4%) }
+// a:active{ color: darken($COLOR_THEME, 8%) }
+a,area,button,[role="button"],
+input:not([type="range"]),
+label,select,summary,textarea {
+  touch-action: manipulation;
+}
+button{
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}

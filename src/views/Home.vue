@@ -1,9 +1,11 @@
 <template><div>
 
-  <!-- <ModalView id="aa" /> -->
-  <img alt="Vue logo" src="@/assets/logo.png">
-
   <p>aaaaa</p>
   <p>aaaaa</p>
 
 </div></template>
+
+
+<style scoped lang="scss">
+@import "@/scss/common.scss";
+</style>

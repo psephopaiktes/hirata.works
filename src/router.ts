@@ -20,8 +20,8 @@ export default new Router({
       component: () => import('./views/Works.vue'),
     },
     {
-      path: '/contact',
-      component: () => import('./views/Contact.vue'),
+      path: '*',
+      component: () => import('./views/404.vue'),
     },
   ],
 });

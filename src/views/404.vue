@@ -1,12 +1,8 @@
 <template><div>
 
-  <h1>This is an works page</h1>
-
-  <ul>
-    <li v-for="(data,wid,i) in works" :key="i" @click="$store.commit('showWorkModal', wid)">
-      <img :src="`@/assets/works/${wid}/thumbnail.png`" :alt=data.title loading="lazy">
-    </li>
-  </ul>
+  <h2>404 page not fount</h2>
+  <router-link to="/">Home</router-link><br>
+  <a href="#" @click="$store.commit('showContactModal')">Contact</a>
 
 </div></template>
 
