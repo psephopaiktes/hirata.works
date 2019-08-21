@@ -9,16 +9,16 @@
       <h1><router-link to="/">Akira HIRATA</router-link></h1>
       <ul>
         <li><router-link to="/">
-          <i class="material-icons-outlined">home</i>HOME
+          <i class="material-icons-outlined">home</i><span>HOME</span>
         </router-link></li>
         <li><router-link to="/about">
-          <i class="material-icons-outlined">person</i>ABOUT
+          <i class="material-icons-outlined">person</i><span>ABOUT</span>
         </router-link></li>
         <li><router-link to="/works">
-          <i class="material-icons-outlined">widgets</i>WORKS
+          <i class="material-icons-outlined">widgets</i><span>WORKS</span>
         </router-link></li>
         <li><button @click="$store.commit('showContactModal')">
-            <i class="material-icons-outlined">send</i>CONTACT
+            <i class="material-icons-outlined">send</i><span>CONTACT</span>
         </button></li>
       </ul>
     </nav>
@@ -68,6 +68,23 @@
   align-items: center;
   flex-direction: column;
   background: $COLOR_THEME;
+  @media (max-width: $WIDTH_TAB){
+    position: relative;
+    justify-content: start;
+    padding: 0 16px;
+    width: 100vw;
+    height: 72px;
+    float: none;
+    flex-direction: row;
+  }
+  @media (max-width: $WIDTH_SP) {
+    position: fixed;
+    top: auto; bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 56px;
+    z-index: 9999;
+  }
   a{
     text-decoration: none;
   }
@@ -81,25 +98,62 @@
     margin-top: -32px;
     color: darken($COLOR_THEME, 16%);
     border: 6px solid darken($COLOR_THEME, 14%);
+    @media (max-width: $WIDTH_TAB) {
+      display: none;
+    }
   }
   ul{
     width: 200px;
     font-size: 18px;
     margin-top: 96px;
+    @media (max-width: $WIDTH_TAB) {
+      display: flex;
+      width: 100%;
+      height: 56px;
+      margin: 24px 0 0;
+    }
+    @media (max-width: $WIDTH_SP) {
+      width: 320px;
+      margin: 0;
+    }
     li{
       text-align: right;
       margin-top: 16px;
+      @media (max-width: $WIDTH_TAB) {
+        margin: 0;
+        text-align: left;
+      }
+    }
+    li:last-child{
+      @media (max-width: $WIDTH_TAB) {
+        margin-left: auto;
+      }
     }
     a{
       color: $COLOR_BASE;
       opacity: .6;
       font-weight: 300;
+      @media (max-width: $WIDTH_TAB) {
+        display: block;
+        width: 120px;
+        height: 48px;
+        line-height: 48px;
+      }
+      @media (max-width: $WIDTH_SP) {
+        background: red;
+        width: 80px;
+      }
       &:hover{
         opacity: 1;
       }
       &.router-link-exact-active{
         font-weight: 600;
         opacity: 1;
+      }
+    }
+    span{
+      @media (max-width: $WIDTH_SP) {
+        display: none;
       }
     }
     i{
@@ -112,13 +166,25 @@
       line-height: 48px;
       border-radius: 8px;
       margin-top: 64px;
-      background: $COLOR_BASE;
-      color: darken($COLOR_THEME, 20%);
+      background: $COLOR_MAIN;
+      /* color: darken($COLOR_THEME, 20%); */
+      color: #fff;
       opacity: .9;
       box-shadow: 0 16px 32px rgba(darken($COLOR_THEME, 30%),.5);
       font-size: 18px;
       font-weight: 500;
       transition: .3s ease-out;
+      @media (max-width: $WIDTH_TAB) {
+        margin: 0;
+      }
+      @media (max-width: $WIDTH_SP) {
+        position: absolute;
+        bottom: 16px; right: 16px;
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        opacity: 1;
+      }
       &:hover{
         opacity: 1;
         transform: scale(1.04);
@@ -128,13 +194,23 @@
   }
 }
 main{
-  width: calc(100vw - 320px);
+  width: calc(100vw - 320px - 32px);
+  margin: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(darken($COLOR_THEME, 30%),.2);
   min-height: 100vh;
   float: right;
   position: relative;
   background: $COLOR_BASE;
   $footer_height: 240px;
   padding-bottom: $footer_height+80px;
+  @media (max-width: $WIDTH_TAB){
+    width: calc(100vw - 32px);
+  }
+  @media (max-width: $WIDTH_SP){
+    width: 100vw;
+    margin: 0;
+  }
   footer {
     height: $footer_height;
     width: 100%;
@@ -148,13 +224,34 @@ main{
       margin: 80px auto 0;
       a{
         display: block;
+        position: relative;
         width: 32px;
         height: 32px;
         margin: 0 8px;
         opacity: .5;
         transition: .2s ease-out;
+        &::after{
+          content: attr(title);
+          display: block;
+          pointer-events: none;
+          opacity: 0;
+          position: absolute;
+          bottom: 50%;
+          left: calc(50% - 36px);
+          width: 72px;
+          padding: 1px 0;
+          border-radius: 8px;
+          color: rgba($COLOR_MAIN,.8);
+          font-size: 12px;
+          transition: .2s ease;
+          background: #fff;
+        }
         &:hover{
           opacity: .8;
+          &::after{
+            opacity: 1;
+            bottom: 110%;
+          }
         }
       }
       svg{

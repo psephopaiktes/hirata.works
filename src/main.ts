@@ -13,9 +13,9 @@ new Vue({
 
 window.console.log(
   // TODO
-  '%c 🕶 Mafia vs Painter 👩‍🎨%c\nhttps://github.com/psephopaiktes/mafia-vs-painter',
+  '%c Welcome ⭐️%c\nhttps://github.com/psephopaiktes/hirata.works',
   `
-    background: #B20;
+    background: #fc6;
     padding: 20px 40px;
     letter-spacing: .5em;
     color: #fff;

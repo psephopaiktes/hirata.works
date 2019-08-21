@@ -1,6 +1,12 @@
 <template><div class="content">
 
-  <p class="copy en">Hi, I'm Designer.</p>
+  <!-- <p class="copy en">Hi, I'm Designer.</p> -->
+
+  <ul class="grid">
+
+    <li></li>
+
+  </ul>
 
 </div></template>
 

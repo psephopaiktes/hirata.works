@@ -2,7 +2,7 @@
 
   <h2 class="headline en">WORKS</h2>
 
-  <nav class="en"><ul>
+  <nav class="en tag"><ul>
     <li>ALL</li>
     <li>UI</li>
     <li>CODE</li>
@@ -19,10 +19,10 @@
 </div></template>
 
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 @import "@/scss/common.scss";
 
-nav{
+.tag{
   margin: 48px auto 0;
   ul{
     display: flex;

@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/psephopaiktes/hirata.works"
   },
+  "vue": {
+    "outputDir": "docs"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "start": "vue-cli-service serve",
@@ -20,9 +23,6 @@
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
-  },
-  "vue": {
-    "outputDir": "docs"
   },
   "devDependencies": {
     "@vue/cli-plugin-typescript": "^3.9.0",
