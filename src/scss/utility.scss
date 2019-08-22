@@ -13,6 +13,9 @@
   font-weight: 700;
   color: darken($COLOR_THEME, 10%);
   position: relative;
+  @media (max-width: $WIDTH_SP){
+    font-size: 48px;
+  }
   &::after{
     content: "";
     display: block;

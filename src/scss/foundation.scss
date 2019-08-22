@@ -47,9 +47,6 @@
 
 html {
   background: $COLOR_THEME;
-  @media (max-width: $WIDTH_SP) {
-    background: $COLOR_BASE;
-  }
 }
 body {
   scroll-behavior: smooth;

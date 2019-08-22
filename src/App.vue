@@ -83,7 +83,7 @@
     left: 0;
     width: 100vw;
     height: 56px;
-    z-index: 9999;
+    z-index: 9998;
   }
   a{
     text-decoration: none;
@@ -111,9 +111,12 @@
       width: 100%;
       height: 56px;
       margin: 24px 0 0;
+      font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      font-size: 14px;
     }
     @media (max-width: $WIDTH_SP) {
-      width: 320px;
       margin: 0;
     }
     li{
@@ -123,10 +126,16 @@
         margin: 0;
         text-align: left;
       }
+      @media (max-width: $WIDTH_SP) {
+        width: 25%;
+      }
     }
     li:last-child{
       @media (max-width: $WIDTH_TAB) {
         margin-left: auto;
+      }
+      @media (max-width: $WIDTH_SP) {
+        position: relative;
       }
     }
     a{
@@ -139,9 +148,12 @@
         height: 48px;
         line-height: 48px;
       }
+      @media (max-width: 600px) {
+        width: 100px;
+      }
       @media (max-width: $WIDTH_SP) {
-        background: red;
-        width: 80px;
+        width: 100%;
+        text-align: center;
       }
       &:hover{
         opacity: 1;
@@ -159,6 +171,9 @@
     i{
       vertical-align: text-top;
       margin-right: 8px;
+      @media (max-width: $WIDTH_SP) {
+        margin: 0;
+      }
     }
     button{
       width: 160px;
@@ -167,7 +182,6 @@
       border-radius: 8px;
       margin-top: 64px;
       background: $COLOR_MAIN;
-      /* color: darken($COLOR_THEME, 20%); */
       color: #fff;
       opacity: .9;
       box-shadow: 0 16px 32px rgba(darken($COLOR_THEME, 30%),.5);
@@ -179,10 +193,10 @@
       }
       @media (max-width: $WIDTH_SP) {
         position: absolute;
-        bottom: 16px; right: 16px;
-        width: 56px;
-        height: 56px;
-        border-radius: 16px;
+        top: -24px; left: calc(50% - 32px);
+        width: 64px;
+        height: 64px;
+        border-radius: 32px;
         opacity: 1;
       }
       &:hover{
@@ -210,6 +224,7 @@ main{
   @media (max-width: $WIDTH_SP){
     width: 100vw;
     margin: 0;
+    border-radius: 0;
   }
   footer {
     height: $footer_height;
@@ -222,6 +237,9 @@ main{
       display: flex;
       justify-content: center;
       margin: 80px auto 0;
+      @media (max-width: $WIDTH_SP){
+        margin: 56px auto 0;
+      }
       a{
         display: block;
         position: relative;

@@ -41,7 +41,7 @@ export default class ModalView extends Vue {}
   width: 100vw;
   height: 100vh;
   overflow: scroll;
-  z-index: 999;
+  z-index: 9999;
 }
 #overlay{
   position: fixed;

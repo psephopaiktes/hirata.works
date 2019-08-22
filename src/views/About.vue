@@ -7,11 +7,16 @@
   <h3 class="subHeadline">自己紹介</h3>
   <p>平田 章です。都内で猫と暮らすデザイナーです。料理・カラオケ・手品などなにかを作ったり表現することが趣味です。ゲーム・映画・マンガなどコンテンツを消費するのも大好きです。チームで協力して新しいモノを作ったり、企画したりするのが得意です。</p>
 
+  <h3 class="subHeadline">スキルマップ</h3>
+  <p>アプリ・サービス開発に携わるデザイナーとしての、私の得意分野は以下のようなイメージです。実装・ビジュアライズなど、アウトプットに落とし込むことが得意です。</p>
+  <!-- <img src="" alt=""> -->
+  <p>このスキルマップは<b>長谷川恭久</b>氏が提唱する「<a href="https://yasuhisa.com/could/article/product-designer-skillmap/" target="_brank">プロダクトデザイナーのスキルマップ</a>」を参考に作成しました。</p>
+
   <h3 class="subHeadline">UI/UXデザイン</h3>
   <p>モバイルアプリケーションやWebサイトなどの情報設計/画面構築を行い、デザインに落とし込んだり、ドキュメントをまとめることができます。Adobe製品を使用してロゴやモーション制作、イラストの作成も行えます。私自身開発者でもあるため、コンポーネントや実装の都合を考えたデザインが得意です。</p>
 
-  <h3 class="subHeadline">Webフロントエンド</h3>
-  <p>HTML・CSS・Javascriptを用いて、Webサイト・Webサービスのフロントエンド構築を行えます。好きなフレームワークはVue.jsで、本ポートフォリオサイトもVueで作成されています (<a href="https://github.com/psephopaiktes/hirata.works" target="_brank">ソースコード</a>) 。いわゆる「フロントエンドエンジニア」よりは「クリエイティブコーダー」よりです。</p>
+  <h3 class="subHeadline">Webフロントエンド実装</h3>
+  <p>HTML・CSS・Javascriptを用いて、Webサイト・Webサービスのフロントエンド構築を行えます。好きなフレームワークはVue.jsで、本ポートフォリオサイトもVueで作成されています (<a href="https://github.com/psephopaiktes/hirata.works" target="_brank">ソースコード</a>) 。</p>
 
   <h3 class="subHeadline">キャリア</h3>
   <table id="career">
