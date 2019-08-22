@@ -5,6 +5,17 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
+Vue.directive('scroll', {
+  inserted: (el, binding) => {
+    const f = (evt: any) => {
+      if (binding.value(evt, el)) {
+        window.removeEventListener('scroll', f);
+      }
+    };
+    window.addEventListener('scroll', f);
+  },
+});
+
 new Vue({
   router,
   store,

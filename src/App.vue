@@ -24,7 +24,7 @@
     </nav>
 
     <main>
-      <router-view />
+      <transition name="page"><router-view /></transition>
       <footer class="en">
         <ul>
           <li><a href="https://twitter.com/psephopaiktes" target="brank_" title="Twitter">
@@ -55,6 +55,15 @@
 @import "@/scss/foundation.scss";
 @import "@/scss/utility.scss";
 @import "@/scss/layout.scss";
+
+
+.page,.page-enter-active{
+  transition: all .4s ease-out;
+}
+.page-enter,.page-leave-to{
+  opacity: 0;
+  filter: blur(32px);
+}
 
 #globalNav{
   width: 320px;
@@ -140,7 +149,7 @@
     }
     a{
       color: $COLOR_BASE;
-      opacity: .6;
+      opacity: .4;
       font-weight: 300;
       @media (max-width: $WIDTH_TAB) {
         display: block;

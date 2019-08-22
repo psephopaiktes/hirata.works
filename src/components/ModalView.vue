@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="$store.state.showModal" id="container">
+    <transition name="modal"><div v-if="$store.state.showModal" id="container">
 
       <div id="overlay" @click="$store.commit('hideModal')"></div>
 
@@ -13,7 +13,7 @@
         </div>
       </section>
 
-    </div>
+    </div></transition>
 
 </template>
 
@@ -35,11 +35,20 @@ export default class ModalView extends Vue {}
 <style scoped lang="scss">
 @import "@/scss/common.scss";
 
+.modal,.modal-enter-active{
+  transition: all .2s ease-out;
+}
+.modal-enter,.modal-leave-to{
+  opacity: 0;
+  transform: translateY(32px);
+}
+
 #container{
   position: fixed;
-  top: 0; left: 0;
+  top: -32px; left: 0;
+  padding-top: 32px;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh + 32px);
   overflow: scroll;
   z-index: 9999;
 }
@@ -53,12 +62,19 @@ export default class ModalView extends Vue {}
 }
 #modal{
   position: relative;
-  width: 100%;
-  max-width: 800px;
+  width: 800px;
   margin: 80px auto;
   padding: 48px;
   background: $COLOR_BASE;
   border-radius: 8px;
   box-shadow: 0 16px 32px rgba($COLOR_MAIN, .2);
+  @media (max-width: 832px){
+    width: calc(100vw - 32px);
+    padding: 40px;
+  }
+  @media (max-width: $WIDTH_SP){
+    padding: 32px;
+    margin: 32px auto;
+  }
 }
 </style>

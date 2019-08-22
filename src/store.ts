@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import Works from '@/assets/works';
+import Works from '@/works';
 
 Vue.use(Vuex);
 

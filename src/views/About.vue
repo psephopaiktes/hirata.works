@@ -8,8 +8,8 @@
   <p>平田 章です。都内で猫と暮らすデザイナーです。料理・カラオケ・手品などなにかを作ったり表現することが趣味です。ゲーム・映画・マンガなどコンテンツを消費するのも大好きです。チームで協力して新しいモノを作ったり、企画したりするのが得意です。</p>
 
   <h3 class="subHeadline">スキルマップ</h3>
-  <p>アプリ・サービス開発に携わるデザイナーとしての、私の得意分野は以下のようなイメージです。実装・ビジュアライズなど、アウトプットに落とし込むことが得意です。</p>
-  <!-- <img src="" alt=""> -->
+  <p>アプリ・サービス開発に携わるデザイナーとして、私の得意分野は以下のようなイメージです。実装・ビジュアライズなど、アウトプットに落とし込むことが得意です。</p>
+  <SkillMap class="skillmap" />
   <p>このスキルマップは<b>長谷川恭久</b>氏が提唱する「<a href="https://yasuhisa.com/could/article/product-designer-skillmap/" target="_brank">プロダクトデザイナーのスキルマップ</a>」を参考に作成しました。</p>
 
   <h3 class="subHeadline">UI/UXデザイン</h3>
@@ -60,4 +60,25 @@
     }
   }
 }
+.skillmap{
+  margin: 24px 16px 12px;
+  box-shadow: 0 4px 32px rgba(darken($COLOR_THEME, 30%),.1);
+  @media (max-width: $WIDTH_SP){
+    margin: 12px -8px 0;
+    box-shadow: 0 2px 16px rgba(darken($COLOR_THEME, 30%),.1);
+  }
+}
 </style>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import SkillMap from '@/assets/skillmap.vue';
+
+@Component({
+  components: {
+    SkillMap,
+  },
+})
+export default class About extends Vue {
+}
+</script>
