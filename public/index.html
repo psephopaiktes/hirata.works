@@ -44,11 +44,58 @@
     <link rel="preload" href="/font/Heavy.woff2" as="font">
     <link rel="preload" href="/font/Black.woff2" as="font">
 
+    <!-- CSS for Loading -->
+    <style>
+      #loading{
+        width: 100vw;
+        height: 100vh;
+        background: #fffdf0;
+        position: fixed;
+        bottom: 0; left: 0;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .6s ease-in-out;
+      }
+      #loading.hide{
+        bottom: 100%;
+        pointer-events: none;
+      }
+      #loading h2{
+        color: #fc6;
+        animation: loading 1s ease-in-out infinite alternate;
+        font-size: 2em;
+        font-weight: 700;
+        text-align: center;
+        border: 8px solid;
+        width: 320px;
+        height: 72px;;
+        line-height: 60px;
+      }
+      @keyframes loading {
+        0% {
+          letter-spacing: .2em;
+          text-indent: .6em;
+          opacity: .3;
+        }
+        100% {
+          letter-spacing: .15em;
+          text-indent: .5em;
+          opacity: .4;
+        }
+      }
+    </style>
+
   </head>
 
   <body>
     <noscript><strong>Javascriptに対応した環境でご覧ください。</strong></noscript>
     <div id="app"></div>
+
+    <section id="loading">
+      <h2 class="en">LOADING...</h2>
+    </section>
 
     <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-50842673-3', 'auto');ga('send', 'pageview');</script>
   </body>

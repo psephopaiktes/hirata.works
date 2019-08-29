@@ -1,53 +1,59 @@
-<template>
-  <div id="app">
+<template><div id="app">
 
-    <ModalView />
+  <ModalView />
 
-    <LoadingView v-show="loading" />
+  <nav class="en" id="globalNav">
+    <h1><router-link to="/">Akira HIRATA</router-link></h1>
+    <ul>
+      <li><router-link to="/">
+        <i class="material-icons-outlined">home</i><span>HOME</span>
+      </router-link></li>
+      <li><router-link to="/about">
+        <i class="material-icons-outlined">person</i><span>ABOUT</span>
+      </router-link></li>
+      <li><router-link to="/works">
+        <i class="material-icons-outlined">widgets</i><span>WORKS</span>
+      </router-link></li>
+      <li><button @click="$store.commit('showContactModal')">
+          <i class="material-icons-outlined">send</i><span>CONTACT</span>
+      </button></li>
+    </ul>
+  </nav>
 
-    <nav class="en" id="globalNav">
-      <h1><router-link to="/">Akira HIRATA</router-link></h1>
-      <ul>
-        <li><router-link to="/">
-          <i class="material-icons-outlined">home</i><span>HOME</span>
-        </router-link></li>
-        <li><router-link to="/about">
-          <i class="material-icons-outlined">person</i><span>ABOUT</span>
-        </router-link></li>
-        <li><router-link to="/works">
-          <i class="material-icons-outlined">widgets</i><span>WORKS</span>
-        </router-link></li>
-        <li><button @click="$store.commit('showContactModal')">
-            <i class="material-icons-outlined">send</i><span>CONTACT</span>
-        </button></li>
-      </ul>
-    </nav>
+  <transition name="page"><router-view /></transition>
 
-    <main>
-      <transition name="page"><router-view /></transition>
-      <footer class="en">
-        <ul>
-          <li><a href="https://twitter.com/psephopaiktes" target="brank_" title="Twitter">
-            <SnsTwitter />
-          </a></li>
-          <li><a href="https://hirata.blog/" target="brank_" title="Blog">
-            <SnsBlog />
-          </a></li>
-          <li><a href="https://note.mu/psephopaiktes" target="brank_" title="note">
-            <SnsNote />
-          </a></li>
-          <li><a href="https://github.com/psephopaiktes/" target="brank_" title="GitHub">
-            <SnsGithub />
-          </a></li>
-          <li><a href="https://www.instagram.com/psephopaiktes/" target="brank_" title="Instagram">
-            <SnsInstagram />
-          </a></li>
-        </ul>
-        <p><small>© Akira HIRATA 2019</small></p>
-      </footer>
-    </main>
-  </div>
-</template>
+</div></template>
+
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import ModalView from '@/components/ModalView.vue';
+
+@Component({
+  components: {
+    ModalView,
+  },
+})
+export default class App extends Vue {
+
+  // data
+  // private loading: boolean = true;
+
+  // lifecycle hook
+  public mounted() {
+    window.addEventListener('load', () => {
+      const elm = document!.getElementById('loading');
+      if (!elm) { return; }
+      elm.classList.add('hide');
+    });
+    if (this.$route.query.wid) {
+      this.$store.commit('showWorkModal', this.$route.query.wid);
+    } else if (this.$route.query.contact) {
+      this.$store.commit('showContactModal');
+    }
+  }
+}
+</script>
 
 
 <style lang="scss">
@@ -62,7 +68,7 @@
 }
 .page-enter,.page-leave-to{
   opacity: 0;
-  filter: blur(32px);
+  filter: blur(20px);
 }
 
 #globalNav{
@@ -77,6 +83,7 @@
   align-items: center;
   flex-direction: column;
   background: $COLOR_THEME;
+  z-index: 9998;
   @media (max-width: $WIDTH_TAB){
     position: relative;
     justify-content: start;
@@ -92,7 +99,9 @@
     left: 0;
     width: 100vw;
     height: 56px;
-    z-index: 9998;
+    background: rgba($COLOR_THEME,.8);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 32px rgba(darken($COLOR_THEME, 30%),.1);
   }
   a{
     text-decoration: none;
@@ -182,6 +191,7 @@
       margin-right: 8px;
       @media (max-width: $WIDTH_SP) {
         margin: 0;
+        font-size: 28px;
       }
     }
     button{
@@ -207,6 +217,8 @@
         height: 64px;
         border-radius: 32px;
         opacity: 1;
+        line-height: 20px;
+        padding-left: 6px;
       }
       &:hover{
         opacity: 1;
@@ -216,120 +228,4 @@
     }
   }
 }
-main{
-  width: calc(100vw - 320px - 32px);
-  margin: 16px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(darken($COLOR_THEME, 30%),.2);
-  min-height: 100vh;
-  float: right;
-  position: relative;
-  background: $COLOR_BASE;
-  $footer_height: 240px;
-  padding-bottom: $footer_height+80px;
-  @media (max-width: $WIDTH_TAB){
-    width: calc(100vw - 32px);
-  }
-  @media (max-width: $WIDTH_SP){
-    width: 100vw;
-    margin: 0;
-    border-radius: 0;
-  }
-  footer {
-    height: $footer_height;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background: rgba( $COLOR_THEME, .1);
-    text-align: center;
-    ul{
-      display: flex;
-      justify-content: center;
-      margin: 80px auto 0;
-      @media (max-width: $WIDTH_SP){
-        margin: 56px auto 0;
-      }
-      a{
-        display: block;
-        position: relative;
-        width: 32px;
-        height: 32px;
-        margin: 0 8px;
-        opacity: .5;
-        transition: .2s ease-out;
-        &::after{
-          content: attr(title);
-          display: block;
-          pointer-events: none;
-          opacity: 0;
-          position: absolute;
-          bottom: 50%;
-          left: calc(50% - 36px);
-          width: 72px;
-          padding: 1px 0;
-          border-radius: 8px;
-          color: rgba($COLOR_MAIN,.8);
-          font-size: 12px;
-          transition: .2s ease;
-          background: #fff;
-        }
-        &:hover{
-          opacity: .8;
-          &::after{
-            opacity: 1;
-            bottom: 110%;
-          }
-        }
-      }
-      svg{
-        width: 32px;
-        height: 32px;
-        fill: darken($COLOR_THEME,20%);
-      }
-    }
-    p{
-      color: darken($COLOR_THEME,20%);
-      margin: 24px 0 0;
-      opacity: .6;
-    }
-  }
-}
 </style>
-
-
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import LoadingView from '@/components/LoadingView.vue';
-import ModalView from '@/components/ModalView.vue';
-import SnsBlog from '@/assets/icon/sns-blog.vue';
-import SnsGithub from '@/assets/icon/sns-github.vue';
-import SnsInstagram from '@/assets/icon/sns-instagram.vue';
-import SnsNote from '@/assets/icon/sns-note.vue';
-import SnsTwitter from '@/assets/icon/sns-twitter.vue';
-
-@Component({
-  components: {
-    LoadingView,
-    ModalView,
-    SnsBlog,
-    SnsGithub,
-    SnsInstagram,
-    SnsNote,
-    SnsTwitter,
-  },
-})
-export default class App extends Vue {
-
-  // data
-  // private loading: boolean = true;
-
-  // lifecycle hook
-  private mounted() {
-    if (this.$route.query.wid) {
-      this.$store.commit('showWorkModal', this.$route.query.wid);
-    } else if (this.$route.query.contact) {
-      this.$store.commit('showContactModal');
-    }
-  }
-}
-</script>

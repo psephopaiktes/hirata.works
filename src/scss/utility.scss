@@ -33,6 +33,25 @@
   letter-spacing: .2em;
 }
 
+.panel{
+  width: calc(100vw - 320px - 32px);
+  margin: 16px;
+  border-radius: 12px;
+  // box-shadow: 0 8px 16px rgba(darken($COLOR_THEME, 30%),.2);
+  min-height: 100vh;
+  float: right;
+  position: relative;
+  background-color: $COLOR_BASE;
+  padding-bottom: 320px;
+  @media (max-width: $WIDTH_TAB){
+    width: calc(100vw - 32px);
+  }
+  @media (max-width: $WIDTH_SP){
+    width: 100vw;
+    margin: 0;
+    border-radius: 0;
+  }
+}
 .content{
   width: 40em;
   max-width: calc(100% - 64px);
@@ -44,4 +63,9 @@
   a:visited{ color: darken($COLOR_THEME, 8%) }
   a:hover{ color: lighten($COLOR_THEME, 4%) }
   a:active{ color: darken($COLOR_THEME, 8%) }
+}
+.inlineIcon{
+  font-size: 1em;
+  margin-left: 2px;
+  vertical-align: text-top;
 }

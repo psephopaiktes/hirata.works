@@ -1,43 +1,54 @@
-<template><div class="content">
+<template><main class="panel">
 
-  <h2 class="headline en">WORKS</h2>
+  <div class="content">
 
-  <nav class="en tag"><ul>
-    <li @click="keys=Object.keys($store.state.works)">
-      <input type="radio" name="tag" id="tag-all" checked><label for="tag-all">ALL</label>
-    </li>
-    <li @click="filter('UI')">
-      <input type="radio" name="tag" id="tag-ui"><label for="tag-ui">UI</label>
-    </li>
-    <li @click="filter('CODE')">
-      <input type="radio" name="tag" id="tag-code"><label for="tag-code">CODE</label>
-    </li>
-    <li @click="filter('GRAPHIC')">
-      <input type="radio" name="tag" id="tag-graphic"><label for="tag-graphic">GRAPHIC</label>
-    </li>
-    <li @click="filter('OTHER')">
-      <input type="radio" name="tag" id="tag-other"><label for="tag-other">OTHER</label>
-    </li>
-  </ul></nav>
+    <h2 class="headline en">WORKS</h2>
 
-  <transition-group name="list" tag="ul" id="works">
-    <li
-      v-for="(wid,i) in keys"
-      :key="i"
-      @click="$store.commit('showWorkModal', wid)"
-      :style="`@/assets/works/${wid}/thumbnail.png`"
-    >
-      <h6>{{$store.state.works[wid].title}}</h6>
-    </li>
-  </transition-group>
+    <nav class="en tag"><ul>
+      <li @click="keys=Object.keys($store.state.works)">
+        <input type="radio" name="tag" id="tag-all" checked><label for="tag-all">ALL</label>
+      </li>
+      <li @click="filter('UI')">
+        <input type="radio" name="tag" id="tag-ui"><label for="tag-ui">UI</label>
+      </li>
+      <li @click="filter('CODE')">
+        <input type="radio" name="tag" id="tag-code"><label for="tag-code">CODE</label>
+      </li>
+      <li @click="filter('GRAPHIC')">
+        <input type="radio" name="tag" id="tag-graphic"><label for="tag-graphic">GRAPHIC</label>
+      </li>
+      <li @click="filter('OTHER')">
+        <input type="radio" name="tag" id="tag-other"><label for="tag-other">OTHER</label>
+      </li>
+    </ul></nav>
 
-</div></template>
+    <transition-group name="list" tag="ul" id="works">
+      <li
+        v-for="(wid,i) in keys"
+        :key="i"
+        @click="$store.commit('showWorkModal', wid)"
+        :style="`@/assets/works/${wid}/thumbnail.png`"
+      >
+        <h6>{{$store.state.works[wid].title}}</h6>
+      </li>
+    </transition-group>
+
+  </div>
+
+  <Footer />
+
+</main></template>
 
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Footer from '@/components/Footer.vue';
 
-@Component
+@Component({
+  components: {
+    Footer,
+  },
+})
 export default class Works extends Vue {
 
   // data

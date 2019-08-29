@@ -24,9 +24,10 @@ new Vue({
 
 window.console.log(
   // TODO
-  '%c Welcome ⭐️%c\nhttps://github.com/psephopaiktes/hirata.works',
+  '%c Welcome 🙋‍%c\nhttps://github.com/psephopaiktes/hirata.works',
   `
     background: #fc6;
+    border-radius: 4px;
     padding: 20px 40px;
     letter-spacing: .5em;
     color: #fff;
