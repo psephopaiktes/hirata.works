@@ -11,6 +11,7 @@
           エラーが発生しました。
           <button @click="$store.commit('hideModal')">閉じる</button>
         </div>
+        <button class="bottomClose" @click="$store.commit('hideModal')"><i class="material-icons-outlined">close</i>閉じる</button>
       </section>
 
     </div></transition>
@@ -74,7 +75,30 @@ export default class ModalView extends Vue {}
   }
   @media (max-width: $WIDTH_SP){
     padding: 32px;
-    margin: 32px auto;
+    margin: 32px auto 96px;
+  }
+  .bottomClose{
+    display: none;
+    @media (max-width: $WIDTH_SP) {
+      display: block;
+      position: absolute;
+      top: calc(100% + 16px);
+      left: calc(50% - 60px);
+      width: 120px;
+      height: 44px;
+      line-height: 40px;
+      border: 3px solid #fff;
+      color: #fff;
+      font-size: 16px;
+      letter-spacing: .1em;
+      font-weight: bold;
+      .material-icons-outlined{
+        font-size: 1.2em;
+        vertical-align: text-bottom;
+        margin-right: 4px;
+        margin-left: -2px;
+      }
+    }
   }
 }
 </style>

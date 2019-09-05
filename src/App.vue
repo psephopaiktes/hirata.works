@@ -3,7 +3,7 @@
   <ModalView />
 
   <nav class="en" id="globalNav">
-    <h1><router-link to="/">Akira HIRATA</router-link></h1>
+    <h1><router-link to="/"><Logo /></router-link></h1>
     <ul>
       <li><router-link to="/">
         <i class="material-icons-outlined">home</i><span>HOME</span>
@@ -20,24 +20,23 @@
     </ul>
   </nav>
 
-  <transition name="page"><router-view /></transition>
+  <transition name="page"><router-view :query="$route.query" /></transition>
 
 </div></template>
 
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 import ModalView from '@/components/ModalView.vue';
+import Logo from '@/assets/Logo.vue';
 
 @Component({
   components: {
     ModalView,
+    Logo,
   },
 })
 export default class App extends Vue {
-
-  // data
-  // private loading: boolean = true;
 
   // lifecycle hook
   public mounted() {
@@ -46,9 +45,12 @@ export default class App extends Vue {
       if (!elm) { return; }
       elm.classList.add('hide');
     });
-    if (this.$route.query.wid) {
-      this.$store.commit('showWorkModal', this.$route.query.wid);
-    } else if (this.$route.query.contact) {
+  }
+
+  // watch
+  @Watch('$route')
+  public onValueChange(): void {
+    if (this.$route.query.contact) {
       this.$store.commit('showContactModal');
     }
   }
@@ -108,14 +110,15 @@ export default class App extends Vue {
   }
   h1 a{
     display: block;
-    width: 200px;
-    height: 64px;
-    line-height: 56px;
-    text-align: center;
-    font-size: 24px;
-    margin-top: -32px;
+    width: 72px;
+    height: 72px;
+    margin: -32px 0 0 128px;
     color: darken($COLOR_THEME, 16%);
-    border: 6px solid darken($COLOR_THEME, 14%);
+    border: 2px solid darken($COLOR_THEME, 14%);
+    svg{
+      fill: darken($COLOR_THEME, 16%);
+      margin: 4px;
+    }
     @media (max-width: $WIDTH_TAB) {
       display: none;
     }
@@ -123,7 +126,7 @@ export default class App extends Vue {
   ul{
     width: 200px;
     font-size: 18px;
-    margin-top: 96px;
+    margin-top: 64px;
     @media (max-width: $WIDTH_TAB) {
       display: flex;
       width: 100%;
@@ -199,7 +202,7 @@ export default class App extends Vue {
       height: 48px;
       line-height: 48px;
       border-radius: 8px;
-      margin-top: 64px;
+      margin-top: 48px;
       background: $COLOR_MAIN;
       color: #fff;
       opacity: .9;

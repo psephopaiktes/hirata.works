@@ -1,0 +1,1 @@
+<template><svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><title>Akira HIRATA</title><path d="m48 0v24h-8v-24l-12 64h12v-24h8v24h16v-64z"/><path d="m36 0h-36v64h16v-16h8v16zm-20 32v-16h8v16z"/></svg></template>

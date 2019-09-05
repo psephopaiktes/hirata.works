@@ -22,7 +22,7 @@
     <section class="inview">
       <h3 class="subHeadline">フロントエンド実装</h3>
       <p>HTML・CSS・Javascriptを用いて、Webサイト・Webサービスのフロントエンド構築を行えます。好きなフレームワークはVue.jsで、本ポートフォリオサイトもVueで作成されています (<a href="https://github.com/psephopaiktes/hirata.works" target="_brank">ソースコード<i class="material-icons-outlined inlineIcon">open_in_new</i></a>) 。</p>
-      <router-link to="/works?tag=ui" class="pageLink"><b>フロントエンド実装</b>の実績一覧</router-link>
+      <router-link to="/works?tag=code" class="pageLink"><b>フロントエンド実装</b>の実績一覧</router-link>
     </section>
 
     <section class="inview">
@@ -32,8 +32,15 @@
       <p>このスキルマップは<b>長谷川恭久</b>氏が提唱する「<a href="https://yasuhisa.com/could/article/product-designer-skillmap/" target="_brank">プロダクトデザイナーのスキルマップ<i class="material-icons-outlined inlineIcon">open_in_new</i></a>」を参考に作成しました。</p>
     </section>
 
+    <!-- Mizchiさんの英語紹介 これいいね -->
+    <!-- 読み書きは出来ますがヒアリングが苦手で、会話は難しいです。ネイティブ相手に気を使ってもらえるなら会話可能、という程度です。ただ、英語のペアプロは専門用語だけで通じるので簡単でした。
+
+ロンドンやサンフランシスコへの旅行の経験だと、ずっと一人だと心もとないですが、一人で出歩いてショッピングしたりすることへの抵抗はないです。
+
+英語へのモチベーションありますが、プログラミングが好きすぎて、余暇がそこに全部吸われているといった現状です。必要だったら勉強するので、半年ほどガッツリ英語勉強してきて使い物になるんだったらこれだけだして雇うよ、みたいなオファーがあるんだったら、ガッツリ勉強してきます。 -->
+
     <section class="inview">
-      <h3 class="subHeadline">キャリア</h3>
+      <h3 class="subHeadline">略歴</h3>
       <table id="career">
         <tr>
           <th>2009</th><td><h4>高知私立 土佐高等学校 入学</h4></td>

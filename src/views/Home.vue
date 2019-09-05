@@ -1,14 +1,15 @@
 <template><main class="panel" v-scroll="showPanel">
 
-  <div class="content">
-    <p class="copy en">Hello.</p>
-    <!-- ↑めっちゃでかく -->
-    <!-- ↓めっちゃよわく -->
-    <p class="en">I'm Akira HIRATA, a Digital Product Designer and Web Front-end Engineer.</p>
-    <ul class="grid">
-      <li></li>
-    </ul>
-  </div>
+  <section id="hero">
+    <div class="copy en">
+      <h1>Akira HIRATA</h1>
+      <p>is a Digital Product Designer</p>
+      <p>and Web Front-end Engineer.</p>
+    </div>
+    <img class="portrait" src="@/assets/portrait.png" alt="平田のポートレート写真">
+  </section>
+
+  <ul id="grid"></ul>
 
   <Footer />
 
@@ -42,14 +43,6 @@ export default class Home extends Vue {
 
 <style scoped lang="scss">
 @import "@/scss/common.scss";
-.copy{
-  font-size: 64px;
-  font-weight: 800;
-  letter-spacing: .2em;
-  @media (max-width: $WIDTH_SP){
-    font-size: 32px;
-  }
-}
 .panel{
   background-color: $COLOR_THEME;
   transition: background-color .8s ease-in-out;
@@ -60,8 +53,45 @@ export default class Home extends Vue {
   background-color: $COLOR_BASE;
   transition: background-color .8s ease-in-out;
 }
-.content{
-  width: calc(100% - 48px);
-  max-width: calc(100% - 48px);
+
+#hero{
+  position: relative;
+  margin: 72px 64px 0 64px;
+  height: calc(100vh - 160px);
+  border: 12px solid rgba($COLOR_BASE,.8);
+  background-color: rgba($COLOR_THEME,.4);
+  .copy{
+    position: absolute;
+    top: 32%;
+    right: 64px;
+    color: $COLOR_BASE;
+    z-index: 999;
+    text-shadow: 0 0 48px rgba($COLOR_MAIN,.1);
+    h1{
+      font-size: 72px;
+      letter-spacing: .15em;
+      line-height: 1;
+    }
+    p{
+      font-size: 36px;
+      letter-spacing: .1em;
+      line-height: 1.5;
+    }
+  }
+  .portrait{
+    display: block;
+    height: calc(100vh - 120px);
+    position: absolute;
+    bottom: 0px;
+    left: 16px;
+  }
+}
+
+#grid{
+  position: relative;
+  width: calc(100% - 304px);
+  height: 800px;
+  margin: -96px auto 0;
+  background: $COLOR_MAIN;
 }
 </style>

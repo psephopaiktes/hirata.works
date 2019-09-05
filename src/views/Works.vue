@@ -5,7 +5,7 @@
     <h2 class="headline en">WORKS</h2>
 
     <nav class="en tag"><ul>
-      <li @click="keys=Object.keys($store.state.works)">
+      <li @click="filter('ALL')">
         <input type="radio" name="tag" id="tag-all" checked><label for="tag-all">ALL</label>
       </li>
       <li @click="filter('UI')">
@@ -22,7 +22,8 @@
       </li>
     </ul></nav>
 
-    <transition-group name="list" tag="ul" id="works">
+    <ul id="works">
+      <p v-if="Object.keys(keys).length==0">URLが間違っているか、タグに一致する作品がありません。</p>
       <li
         v-for="(wid,i) in keys"
         :key="i"
@@ -31,7 +32,7 @@
       >
         <h6>{{$store.state.works[wid].title}}</h6>
       </li>
-    </transition-group>
+    </ul>
 
   </div>
 
@@ -41,7 +42,7 @@
 
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Prop, Component, Vue } from 'vue-property-decorator';
 import Footer from '@/components/Footer.vue';
 
 @Component({
@@ -51,16 +52,36 @@ import Footer from '@/components/Footer.vue';
 })
 export default class Works extends Vue {
 
+  // props
+  @Prop() public query!: any;
+
   // data
   public keys: string[] = Object.keys( this.$store.state.works );
 
   // methods
   public filter(filteringTag: string) {
-    this.keys = Object.keys( this.$store.state.works ).filter( (val, i) => {
-      if ( this.$store.state.works[val].tag.indexOf(filteringTag) >= 0 ) {
-        return val;
-      }
-    });
+    if ( filteringTag.toUpperCase() === 'ALL' ) {
+      this.keys = Object.keys(this.$store.state.works);
+    } else {
+      this.keys = Object.keys( this.$store.state.works ).filter( (val, i) => {
+        if ( this.$store.state.works[val].tag.indexOf(filteringTag.toUpperCase()) >= 0 ) {
+          return val;
+        }
+      });
+    }
+    history.replaceState('', '', '/works?tag=' + filteringTag.toLowerCase());
+  }
+
+  // lifecycle hook
+  public mounted() {
+    if (this.query.wid) {
+      this.$store.commit('showWorkModal', this.$route.query.wid);
+    } else if ( this.query.tag ) {
+      this.filter(this.query.tag);
+      const radio = document.getElementById('tag-' + this.query.tag);
+      if (!radio) { return; }
+      radio.setAttribute('checked', 'true');
+    }
   }
 
 }
@@ -69,15 +90,13 @@ export default class Works extends Vue {
 
 <style lang="scss" scoped>
 @import "@/scss/common.scss";
-
-.list,.list-enter-active{
-  transition: transform .2s ease-out .4s;
+.content{
+  width: 800px;
+  max-width: calc(100% - 64px);
+  @media (max-width: $WIDTH_TAB) {
+    width: 640px;
+  }
 }
-.list-enter,.list-leave-to{
-  opacity: 0;
-  transform: translateY(24px);
-}
-
 .tag{
   margin: 32px auto 0;
   input{
@@ -112,9 +131,15 @@ export default class Works extends Vue {
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(30%, 1fr)
+    minmax(20%, 1fr)
   );
   grid-gap: 2px;
+  @media (max-width: $WIDTH_TAB){
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(30%, 1fr)
+    );
+  }
   @media (max-width: $WIDTH_SP){
     grid-template-columns: repeat(
       auto-fit,
@@ -147,7 +172,7 @@ export default class Works extends Vue {
       font-size: 16px;
       color: #fff;
       letter-spacing: .05em;
-      opacity: 0;
+      opacity: 1;
       transition: inherit;
     }
     &:hover{

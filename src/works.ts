@@ -1,6 +1,17 @@
 /* tslint:disable */
 const Works: any = {
 
+  // iaia: {
+  //   title: 'iAiA!',
+  //   tag: ['UI','CODE'],
+  //   date: '',
+  //   link: 'http://iaia.app',
+  //   numImg: 0,
+  //   roll: ['Web Design','HTML/CSS','javascript','Planning'],
+  //   abstract: '',
+  //   description: '',
+  // },
+
   osyaberiya: {
     title: 'おしゃべりや',
     tag: ['UI','CODE'],
