@@ -3,7 +3,7 @@
   <section id="hero">
     <div class="copy en">
       <h1>Akira HIRATA</h1>
-      <p>is a Digital Product Designer</p>
+      <p>is a Digital Product Designer,</p>
       <p>and Web Front-end Engineer.</p>
     </div>
     <img class="portrait" src="@/assets/portrait.png" alt="平田のポートレート写真">
@@ -56,34 +56,78 @@ export default class Home extends Vue {
 
 #hero{
   position: relative;
-  margin: 72px 64px 0 64px;
-  height: calc(100vh - 160px);
-  border: 12px solid rgba($COLOR_BASE,.8);
+  margin: 5vw 4vw 0 4vw;
+  height: calc(100vh - 10vw - 32px);
+  border: 1vw solid rgba($COLOR_BASE,.8);
   background-color: rgba($COLOR_THEME,.4);
+  @media (max-width: $WIDTH_TAB) {
+    margin: 2vw 4px 0;
+    height: 60vw;
+    border: 1.5vw solid rgba($COLOR_BASE,.8);
+  }
+  @media (max-width: $WIDTH_SP) {
+    padding-top: 1px;
+    margin: 0;
+    height: auto;
+    border: none;
+  }
   .copy{
     position: absolute;
-    top: 32%;
-    right: 64px;
-    color: $COLOR_BASE;
+    text-align: right;
+    top: 36%;
+    right: 6vw;
+    color: #fff;
     z-index: 999;
-    text-shadow: 0 0 48px rgba($COLOR_MAIN,.1);
+    text-shadow: 0 0 3vw rgba($COLOR_MAIN,.1);
+    line-height: 1.4;
     h1{
-      font-size: 72px;
+      font-size: 4.8vw;
       letter-spacing: .15em;
-      line-height: 1;
     }
     p{
-      font-size: 36px;
+      font-size: 2.4vw;
       letter-spacing: .1em;
-      line-height: 1.5;
+    }
+    @media (max-width: $WIDTH_TAB) {
+      right: 7vw;
+      h1{
+        font-size: 6.4vw;
+      }
+      p{
+        font-size: 3.2vw;
+      }
+    }
+    @media (max-width: $WIDTH_SP) {
+      position: static;
+      text-align: left;
+      width: 85vw;
+      margin: 48px auto 0;
+      h1{
+        font-size: 11vw;
+        letter-spacing: .1em;
+      }
+      p{
+        font-size: 5.2vw;
+      }
     }
   }
   .portrait{
     display: block;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 8vw - 32px);
     position: absolute;
     bottom: 0px;
-    left: 16px;
+    left: 2vw;
+    @media (max-width: $WIDTH_TAB) {
+      height: 63vw;
+      left: 2.5vw;
+    }
+    @media (max-width: $WIDTH_SP) {
+      opacity: .9;
+      position: static;
+      margin: 16px 15vw 0 5vw;
+      width: 80vw;
+      height: auto;
+    }
   }
 }
 
@@ -91,7 +135,12 @@ export default class Home extends Vue {
   position: relative;
   width: calc(100% - 304px);
   height: 800px;
-  margin: -96px auto 0;
-  background: $COLOR_MAIN;
+  margin: -48px auto 0;
+  background: #fff;
+  box-shadow: 0 0 32px rgba(darken($COLOR_THEME, 30%),.2);
+  @media (max-width: $WIDTH_SP) {
+    width: calc(100% - 64px);
+    margin: -16px auto 0;
+  }
 }
 </style>
